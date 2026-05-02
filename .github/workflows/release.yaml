@@ -21,13 +21,9 @@ jobs:
       - name: Build binaries
         run: |
           GOOS=windows GOARCH=amd64 go build -o task-cli-windows-amd64.exe .
-          GOOS=linux   GOARCH=amd64 go build -o task-cli-linux-amd64 .
-          GOOS=darwin  GOARCH=amd64 go build -o task-cli-macos-amd64 .
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
             task-cli-windows-amd64.exe
-            task-cli-linux-amd64
-            task-cli-macos-amd64
